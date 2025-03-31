@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.clr{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #f8fafc, #eef2ff);
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,17 @@
+import express from "express";
+import isAuthenticated from "../middlewares/isauthenicated.js";
+import { getCompany, getCompanyById, registerCompany, updateCompany } from "../controllers/company.controllers.js";
+import { singleUpload } from "../middlewares/multer.js";
+
+ 
+// import { singleUpload } from "../middlewares/mutler.js";
+
+
+const router = express.Router();
+
+router.route("/register").post(isAuthenticated,registerCompany);
+router.route("/get").get(isAuthenticated,getCompany);
+router.route("/get/:id").get(isAuthenticated,getCompanyById);
+router.route("/update/:id").put(isAuthenticated,singleUpload, updateCompany); //singleUpload
+
+export default router;
